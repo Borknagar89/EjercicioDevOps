@@ -24,3 +24,8 @@ jobs:
 
       # run tests!
       -run: docker run Ejemplo npm test
+
+      -run: sh deployments/qa.sh
+      
+    branches:
+      only: /feature_.*/
