@@ -21,7 +21,7 @@ jobs:
       - checkout
       - setup_remote_docker
 
-      -run: docker build -t Ejemplo -f ../Dockerfile
+      -run: docker build -t Ejemplo -f /Dockerfile
 
       # run tests!
       -run: docker run Ejemplo npm test
