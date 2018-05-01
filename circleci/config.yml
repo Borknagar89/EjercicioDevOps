@@ -15,11 +15,10 @@ version: 2
 jobs:
   build:
     docker:
-      -image: docker:18.03.1-ce
+      - image: docker:18.03.1-ce
 
     steps:
       - checkout
-      - setup_remote_docker
 
       -run: docker build -t Ejemplo -f /Dockerfile
 
