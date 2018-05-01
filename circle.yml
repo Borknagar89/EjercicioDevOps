@@ -1,11 +1,27 @@
-machine:
-  service:
-    - docker
+# Version 1
+# machine:
+#   service:
+#     - docker
 
-dependencies:
-  override:
-    - docker build -t Ejemplo
+# dependencies:
+#   override:
+#     - docker build -t Ejemplo
 
-test:
-  override:
-    - docker run Ejemplo npm test
+# test:
+#   override:
+#     - docker run Ejemplo npm test
+
+version: 2
+jobs:
+  build:
+    docker:
+      -image:docker:18.03.1-ce
+
+    steps:
+      - checkout
+      - setup_remote_docker
+
+      -run: docker build -t voltor .
+
+      # run tests!
+      -run: docker run voltor npm test
