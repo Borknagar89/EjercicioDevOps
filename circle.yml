@@ -1,0 +1,11 @@
+machine:
+  service:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t Ejemplo
+
+test:
+  override:
+    - docker run Ejemplo npm test
