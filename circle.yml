@@ -13,15 +13,15 @@
 
 version: 2
 jobs:
-	build:
-		docker:
-			-image:docker:18.03.1-ce
+  build:
+    docker:
+      -image:docker:18.03.1-ce
 
-		steps:
-			- checkout
-			- setup_remote_docker
+    steps:
+      - checkout
+      - setup_remote_docker
 
-			-run: docker build -t Ejemplo -f ../Dockerfile
+      -run: docker build -t Ejemplo -f ../Dockerfile
 
-			# run tests!
-			-run: docker run Ejemplo npm test
+      # run tests!
+      -run: docker run Ejemplo npm test
