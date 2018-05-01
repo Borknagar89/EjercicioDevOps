@@ -21,7 +21,7 @@ jobs:
       - checkout
       - setup_remote_docker
 
-      -run: docker build -t voltor .
+      -run: docker build -t Ejemplo .
 
       # run tests!
-      -run: docker run voltor npm test
+      -run: docker run Ejemplo npm test
