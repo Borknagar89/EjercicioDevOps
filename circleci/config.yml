@@ -16,6 +16,7 @@ jobs:
   build:
     docker:
       - image: docker:18.03.1-ce
+      - image: node:8.11.1
 
     steps:
       - checkout
